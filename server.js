@@ -1,9 +1,9 @@
 var
   express = require('express'),
+  app    = express(),
   https = require('https'),
   fs = require('fs'),
   path = require('path'),
-  app    = express(),
   util   = require('util'),
   os     = require('os');
 
@@ -46,8 +46,13 @@ function announce(err) {
 
 function getAddresses() {
   var
-    interfaces = os.networkInterfaces(),
+    network = os.networkInterfaces(),
+    interfaces = [],
     addresses = [];
+
+  for (prop in network) {
+    interfaces.push(network[prop]);
+  }
 
   interfaces.forEach(function(net) {
     net.forEach(function(address) {
