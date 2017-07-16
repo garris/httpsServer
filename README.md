@@ -1,13 +1,13 @@
-# superSimpleExpressServer
+# httpsServer
 node+express: serve static files with https option
 
 
-INSTALL
+##INSTALL
 
 `npm install`
 
 
-TO RUN
+##TO RUN
 
 `npm start https`
 
